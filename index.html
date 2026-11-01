@@ -1,47 +1,228 @@
-<!doctype html>
-<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#100809"><title>Rote Burg Theater · Berlin 1926</title><style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&display=swap');
-:root{--gold:#e8c687;--dark:#10090b;--red:#68141b}*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--dark);color:#f8ead3;font-family:'Cormorant Garamond',Georgia,serif}body{overflow-x:hidden;background:radial-gradient(ellipse at 50% 30%,#442123 0%,#170d12 53%,#080608 100%)}button{font:inherit;cursor:pointer}button:focus-visible{outline:3px solid white;outline-offset:4px}.stage{min-height:100svh;display:flex;align-items:center;justify-content:center;position:relative;isolation:isolate;overflow:hidden;padding:35px 16px}.stage:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 50px,#ffffff05 51px 54px);opacity:.45;pointer-events:none}.spot{position:absolute;top:-45vh;width:60vw;height:115vh;background:linear-gradient(#e9bf7850,transparent 80%);filter:blur(38px);clip-path:polygon(47% 0,53% 0,100% 100%,0 100%);opacity:.3;pointer-events:none}.spot.left{left:-19vw;transform:rotate(16deg)}.spot.right{right:-19vw;transform:rotate(-16deg)}.frame{width:min(960px,100%);min-height:620px;border:3px solid #b78a48;outline:1px solid #6e4627;outline-offset:7px;box-shadow:0 0 0 14px #200e10,0 30px 110px #000c,inset 0 0 90px #000;position:relative;background:radial-gradient(ellipse at center,#2b1c20 0%,#0d090e 75%);overflow:hidden}.arch{height:110px;border-radius:0 0 50% 50%;border-bottom:3px solid #9f753a;background:repeating-linear-gradient(90deg,#48121a 0 24px,#721d28 27px 48px,#3c1018 52px 70px);box-shadow:0 12px 35px #0009;position:relative;z-index:3}.arch:after{content:'✦  ROTE BURG THEATER  ✦';position:absolute;left:0;right:0;top:25px;text-align:center;color:#f3d49b;font-size:clamp(19px,3vw,33px);letter-spacing:.13em;text-shadow:0 2px 5px #000}.curtain{position:absolute;z-index:5;top:80px;bottom:0;width:51%;background:repeating-linear-gradient(90deg,#3e0912 0,#7c1923 24px,#4c0a13 45px,#9b2830 62px,#37070f 85px);box-shadow:inset 0 0 50px #000a,0 0 40px #000b;transition:transform 2.7s cubic-bezier(.62,0,.19,1)}.curtain.l{left:0;border-right:3px solid #b68b4e}.curtain.r{right:0;border-left:3px solid #b68b4e}.open .curtain.l{transform:translateX(-96%)}.open .curtain.r{transform:translateX(96%)}.inner{position:relative;z-index:2;text-align:center;padding:45px 20px 70px;max-width:800px;margin:auto;opacity:.05;transition:opacity 2s}.open .inner{opacity:1}.eyebrow{color:#c9a76b;letter-spacing:.3em;font-size:clamp(14px,2vw,20px)}h1{font-size:clamp(50px,9vw,105px);font-weight:500;line-height:.83;margin:24px 0 18px;color:#f0d49a;text-shadow:0 0 22px #b57d4560}h1 span{display:block;font-size:.45em;letter-spacing:.21em;margin-top:22px}h2{font-size:clamp(26px,4vw,43px);font-weight:500;color:#efce90;margin:18px 0}.ornament{color:#bd8a4c;font-size:27px;letter-spacing:.6em;margin:20px}.intro{font-size:clamp(20px,2.7vw,28px);line-height:1.4;max-width:620px;margin:18px auto 28px}.btn{border:1px solid #dcb878;background:linear-gradient(130deg,#74301f,#4b1017);color:#f8e3b5;letter-spacing:.11em;font-size:clamp(17px,2vw,23px);padding:13px 28px;box-shadow:0 7px 25px #0009;transition:filter .2s,transform .2s}.btn:hover{filter:brightness(1.25);transform:translateY(-2px)}.entry{position:absolute;inset:0;z-index:9;background:radial-gradient(ellipse at center,#32191d,#09070a 75%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;transition:opacity .8s}.entry.hidden{opacity:0;pointer-events:none}.entry .title{font-size:clamp(38px,8vw,85px);color:#efce90;line-height:1;margin:10px}.entry p{font-size:23px}.envelope{width:min(450px,90%);height:245px;margin:35px auto 25px;position:relative;filter:drop-shadow(0 20px 20px #000a);cursor:pointer;perspective:900px}.env-base{position:absolute;inset:0;background:linear-gradient(135deg,#58131c,#8c2732 55%,#4a0c16);border:2px solid #c99a5c;box-shadow:inset 0 0 35px #0008}.env-base:after{content:'';position:absolute;inset:9px;border:1px solid #c99a5c77}.flap{position:absolute;inset:0;z-index:2;background:linear-gradient(160deg,#9e3440,#5b1420);clip-path:polygon(0 0,100% 0,50% 60%);transform-origin:top;transition:transform 1.2s;filter:drop-shadow(0 3px 3px #0009)}.seal{position:absolute;z-index:3;left:50%;top:57%;transform:translate(-50%,-50%);width:66px;height:66px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#c84b4a,#6b1019 75%);border:4px double #e3a99a;display:grid;place-items:center;font-size:20px;color:#f2bfa6;box-shadow:0 4px 9px #0009;transition:opacity .4s}.env-name{position:absolute;z-index:1;left:0;right:0;bottom:22px;font-family:'Great Vibes',cursive;font-size:38px;color:#f2d39c}.envelope.unsealed .flap{transform:rotateX(180deg)}.envelope.unsealed .seal{opacity:0}.invite{display:none;animation:rise .9s ease both;margin:22px auto 0;max-width:680px}.invite.visible{display:block}.invite img{display:block;width:100%;height:auto;border:2px solid #e2b879;box-shadow:0 15px 40px #000c}.invite p{font-size:19px}.small{font-size:18px;color:#d2b996}.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:25px 0}.muted{background:#211619}.hint{font-size:16px;opacity:.8;margin-top:10px}.foot{font-size:14px;color:#c8a778;margin:30px 0 0}@keyframes rise{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}@media(max-width:560px){.frame{min-height:620px}.arch{height:85px}.arch:after{top:19px}.curtain{top:65px}.inner{padding:35px 12px 50px}.envelope{height:195px}.env-name{font-size:30px}.intro{font-size:21px}}
-</style></head><body><main class="stage"><div class="spot left"></div><div class="spot right"></div><div class="frame" id="frame"><div class="arch"></div><div class="curtain l"></div><div class="curtain r"></div><div class="entry" id="entry"><div class="eyebrow">BERLIN · 1926</div><div class="title">ROTE BURG<br>THEATER</div><div class="ornament">✦ ✧ ✦</div><p>Eine aussergewöhnliche Premiere erwartet Sie.</p><button class="btn" id="enter">THEATER BETRETEN</button><div class="hint">Mit Musik und Ton · Ton einschalten</div></div><section class="inner"><div class="eyebrow">EINE PERSÖNLICHE EINLADUNG</div><h1>ANTLITZ<span>BERLINS</span></h1><div class="ornament">✦ ✧ ✦</div><p class="intro">Meine sehr verehrten Damen und Herren,<br>Fritz von Rappburg lädt Sie zur Premiere seines neuesten Theaterstücks ein.<br><em>Ein besonderer Tag voller Glanz und Geheimnisse erwartet Sie.</em></p><h2 id="salutation">Ein Brief wartet auf Sie</h2><div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Einladung öffnen"><div class="env-base"></div><div class="flap"></div><div class="seal">F.v.R.</div><div class="env-name" id="envname"></div></div><button class="btn" id="open">✉ EINLADUNG ÖFFNEN</button><div class="invite" id="invite"><img id="inviteImage" alt="Persönliche Einladung" loading="eager"><p>Ihre persönliche Einladung zur Premiere und zum anschliessenden Fest.</p><div class="actions"><button class="btn muted" id="close">EINLADUNG SCHLIESSEN</button><button class="btn muted" id="sound">TON AUSSCHALTEN</button></div></div><div class="foot">ROTE BURG THEATER · BERLIN 1926</div></section></div></main><script>
-const guests={margarete:{name:'Margarete Maurus',file:'Margarete Einladung.png',greet:'Sehr geehrte Margarete'},ilse:{name:'Ilse Hauber',file:'Ilse Einladung.png',greet:'Liebe Ilse'},wilhelm:{name:'Wilhelm von Rappburg',file:'Wilhelm Einladung.png',greet:'Lieber Wilhelm'},juri:{name:'Juri Petrow',file:'Juri Einladung.png',greet:'Lieber Juri'},elli:{name:'Elli Wolf',file:'Ellie Einladung.png',greet:'Liebe Elli'}};
-const id=(new URLSearchParams(location.search).get('gast')||'').toLowerCase();const guest=guests[id];const $=s=>document.getElementById(s);
-if(guest){$('envname').textContent=guest.name;$('salutation').textContent=guest.greet;$('inviteImage').src=encodeURI(guest.file);$('inviteImage').alt='Einladung für '+guest.name;}else{$('salutation').textContent='Ihre persönliche Einladung';$('envname').textContent='Nur für geladene Gäste';$('open').disabled=true;$('open').textContent='PERSÖNLICHEN LINK VERWENDEN';$('envelope').style.cursor='default';}
-// Música escolhida pelo anfitrião. O MP3 deve estar na mesma pasta do index.html.
-const soundtrack = new Audio('vellumlounge-retro-jazz-annabelle-male-vocal-577014.mp3');
-soundtrack.loop = true;
-soundtrack.preload = 'auto';
-soundtrack.volume = 0.48;
-let ctx, master, muted = false;
-function audioStart() {
-  soundtrack.muted = muted;
-  if (!muted && soundtrack.paused) soundtrack.play().catch(() => {});
-  try {
-    if (!ctx) {
-      ctx = new (window.AudioContext || window.webkitAudioContext)();
-      master = ctx.createGain();
-      master.gain.value = 0.4;
-      master.connect(ctx.destination);
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0b0e">
+  <meta name="description" content="Eine rätselhafte Nachricht aus Berlin, 1926. Theater Rote Burg.">
+  <title>Erste Warnung · Theater Rote Burg · Berlin 1926</title>
+  <style>
+    :root {--bg:#07080b;--red:#9a1720;--gold:#c7a578;--paper:#e5c79b;--text:#f0e4d4}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0; min-height:100vh; min-height:100svh; color:var(--text);font-family:Georgia,'Times New Roman',serif;background:#050507;overflow-x:hidden}
+    button{font:inherit;cursor:pointer}
+    button:focus-visible{outline:3px solid #e8c991;outline-offset:5px}
+    [hidden]{display:none!important}
+    .backdrop{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;background: radial-gradient(ellipse 80% 50% at 50% 12%,#1e2229 0%,#0c1119 52%,#040608 100%)}
+    .backdrop::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 22%,rgba(0,0,0,.82) 100%);z-index:4}
+    .skyline{position:absolute;bottom:-3%;left:0;width:100%;height:68%;opacity:.75;filter:drop-shadow(0 -3px 20px #000)}
+    .street-glow{position:absolute;inset:12% -20% -12%;background:radial-gradient(ellipse at 77% 61%,rgba(152,89,34,.2),transparent 28%),radial-gradient(ellipse at 24% 55%,rgba(129,20,24,.18),transparent 27%);z-index:1}
+    .fog{position:absolute;width:170%;height:35%;bottom:0;left:-50%;background:radial-gradient(ellipse at 50% 65%,rgba(200,190,165,.09),transparent 65%);filter:blur(32px);animation:fog 21s ease-in-out infinite alternate;z-index:3}
+    .rain{position:absolute;inset:-30% -10%;z-index:2;opacity:.3;transform:rotate(12deg);overflow:hidden}
+    .rain i{position:absolute;display:block;width:1px;height:var(--len);top:-35%;left:var(--left);opacity:var(--opacity);background:linear-gradient(transparent,rgba(188,198,211,.56));animation:rainfall var(--dur) linear infinite;animation-delay:var(--delay)}
+    .vignette{position:fixed;inset:0;pointer-events:none;z-index:10;box-shadow:inset 0 0 140px rgba(0,0,0,.86)}
+    .hud{position:relative;z-index:20;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px clamp(16px,5vw,76px);letter-spacing:.18em;font-family:'Courier New',monospace;font-size:clamp(10px,1.1vw,13px);color:#c9b9a6}
+    .hud .brand{display:flex;align-items:center;gap:11px;text-transform:uppercase}
+    .hud .brand::before{content:"";height:8px;width:8px;border-radius:50%;background:#aa2424;box-shadow:0 0 12px #c32c2c;animation:pulse 4s infinite}
+    .sound{display:inline-flex;align-items:center;gap:8px;background:rgba(9,8,10,.68);color:#d9c8ae;border:1px solid #72543d;letter-spacing:.08em;font-size:12px;padding:11px 14px;min-height:44px;border-radius:2px}
+    .sound:hover,.sound:focus-visible{border-color:#d7af78}
+    main{position:relative;z-index:5}
+    .scene{min-height:calc(100svh - 76px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:38px 18px 66px;text-align:center;animation:appear .8s ease both}
+    .ornament{color:#b79a78;font-size:22px;letter-spacing:.35em;margin-bottom:21px;text-shadow:0 1px 14px #000}
+    .eyebrow{font-family:'Courier New',monospace;letter-spacing:.28em;text-transform:uppercase;color:#c2a88a;font-size:clamp(11px,1.3vw,15px);margin:0 0 19px}
+    .hero-title{max-width:1000px;font-weight:400;font-size:clamp(38px,6.1vw,92px);line-height:1.12;letter-spacing:.018em;margin:0 0 25px;text-shadow:0 4px 25px #000}
+    .hero-title em{font-weight:normal;font-style:italic;color:#c99d90}
+    .thin-rule{display:flex;align-items:center;gap:18px;margin:18px 0 28px;color:#99765b;letter-spacing:.5em}
+    .thin-rule:before,.thin-rule:after{content:"";width:clamp(36px,8vw,120px);height:1px;background:linear-gradient(90deg,transparent,#98704f,transparent)}
+    .hero-sub{color:#c8b6a4;letter-spacing:.16em;font-size:clamp(13px,1.4vw,17px);margin:0 0 38px;max-width:660px;line-height:1.65;text-transform:uppercase}
+    .cta{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:14px;max-width:100%;min-height:56px;padding:17px clamp(20px,5vw,42px);background:linear-gradient(145deg,#741719,#42090d);border:1px solid #a96255;color:#fff4e2;font-family:'Courier New',monospace;letter-spacing:.12em;font-size:clamp(12px,1.2vw,15px);font-weight:bold;text-transform:uppercase;box-shadow:0 14px 45px rgba(0,0,0,.56),inset 0 1px 0 rgba(255,255,255,.08);transition:transform .25s,filter .25s}
+    .cta:before,.cta:after{content:"";position:absolute;width:9px;height:9px;border-color:#b9946d;border-style:solid}
+    .cta:before{top:5px;left:5px;border-width:1px 0 0 1px}.cta:after{bottom:5px;right:5px;border-width:0 1px 1px 0}
+    .cta:hover{filter:brightness(1.2);transform:translateY(-2px)}
+    .notice{font:12px/1.6 'Courier New',monospace;color:#a69a8e;margin:20px auto 0;max-width:480px}
+    .envelope-title{font-weight:normal;font-size:clamp(35px,5.2vw,64px);margin:0 0 14px;text-shadow:0 5px 25px #000}
+    .hint{max-width:640px;color:#bdb0a2;font-size:clamp(13px,1.4vw,17px);letter-spacing:.04em;line-height:1.6;margin:6px 0 28px}
+    .env-outer{position:relative;width:min(90vw,650px);height:auto;aspect-ratio:1.55;max-height:420px;margin:20px 0 20px;perspective:1100px;filter:drop-shadow(0 32px 24px rgba(0,0,0,.75));outline-offset:8px;appearance:none;border:0;background:transparent;padding:0;transition:transform .4s;cursor:pointer}
+    .env-outer:hover:not(.opened){transform:translateY(-7px)}
+    .env-back{position:absolute;inset:0;border:2px solid #9e654d;background:linear-gradient(130deg,#3d1015,#260b10 55%,#17090d);clip-path:polygon(0 0,100% 0,100% 100%,0 100%);box-shadow:inset 0 0 46px #080307}
+    .env-inside{position:absolute;inset:9% 5% 13%;background:linear-gradient(140deg,#ecd0a2,#bea076);clip-path:polygon(50% 75%,0 0,100% 0);opacity:.3;z-index:1}
+    .env-body{position:absolute;inset:0;z-index:3;background:linear-gradient(135deg,#782a2d,#38131a 64%,#4f1a20);clip-path:polygon(0 0,50% 52%,100% 0,100% 100%,0 100%);border-bottom:2px solid #b77954;box-shadow:inset 0 -8px 36px rgba(0,0,0,.5)}
+    .env-body::after{content:"";position:absolute;inset:3%;border:1px solid rgba(204,154,107,.5);clip-path:polygon(0 0,50% 52%,100% 0,100% 100%,0 100%)}
+    .env-top{position:absolute;inset:0;transform-origin:50% 0%;z-index:6;background:linear-gradient(180deg,#782a30,#410e17);clip-path:polygon(0 0,100% 0,50% 53%);filter:drop-shadow(0px 5px 4px #000);backface-visibility:hidden;transition:transform 1.1s cubic-bezier(.22,.8,.24,1),opacity .8s .3s}
+    .env-address{position:absolute;z-index:5;bottom:10%;left:11%;right:11%;text-align:center;color:#e8c7a2;letter-spacing:.20em;font:clamp(10px,1.6vw,18px)/1.9 'Courier New',monospace;text-shadow:0 2px 6px #000}
+    .env-seal{position:absolute;left:50%;top:49%;transform:translate(-50%,-50%);z-index:8;width:clamp(64px,11vw,106px);height:clamp(64px,11vw,106px);display:grid;place-items:center;border-radius:50%;color:#d1aa79;font:bold clamp(22px,4vw,40px) Georgia,serif;background:radial-gradient(circle at 35% 28%,#c13739,#7b101b 58%,#39080d);border:5px double #b46154;box-shadow:inset 0 0 12px #2d0005,0 6px 16px #140405,0 0 0 4px rgba(51,7,8,.28);transition:transform .45s,opacity .4s}
+    .env-seal:before{content:"";position:absolute;inset:10px;border:1px solid rgba(231,172,123,.48);border-radius:50%}
+    .env-outer.opened .env-top{transform:rotateX(175deg);opacity:.68;z-index:1}
+    .env-outer.opened .env-seal{transform:translate(-50%,-50%) rotate(25deg) scale(1.6);opacity:0}
+    .env-outer.opened{pointer-events:none}
+    .letter-scene{padding-top:26px;justify-content:flex-start;min-height:calc(100svh - 76px)}
+    .letter-heading{font:clamp(11px,1.3vw,14px) 'Courier New',monospace;color:#d5ad88;letter-spacing:.31em;text-transform:uppercase;margin:18px 0 12px}
+    .warning-phrase{font-size:clamp(24px,4vw,43px);font-weight:normal;margin:0 0 28px;color:#e9dac7;text-shadow:0 4px 30px #000}
+    .letter-frame{position:relative;width:min(100%,780px);padding:clamp(8px,1.5vw,16px);border:1px solid #6b4837;background:rgba(8,6,7,.82);box-shadow:0 30px 90px #000,0 0 45px rgba(89,18,20,.25);animation:rise .9s ease both}
+    .letter-frame:before,.letter-frame:after{content:"";position:absolute;width:28px;height:28px;border:2px solid #b18456;pointer-events:none;z-index:1}
+    .letter-frame:before{top:4px;left:4px;border-right:0;border-bottom:0}.letter-frame:after{right:4px;bottom:4px;border-left:0;border-top:0}
+    .letter-image{display:block;width:100%;height:auto;background:#4b3427}
+    .letter-options{display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:22px}
+    .text-button{background:rgba(0,0,0,.6);border:1px solid #775c49;color:#ddc5ad;padding:12px 18px;font:12px 'Courier New',monospace;letter-spacing:.08em;min-height:44px}
+    .text-button:hover{border-color:#cba073}
+    .footer{position:relative;z-index:6;text-align:center;padding:16px 12px 28px;color:#8c7a6c;font:10px/1.8 'Courier New',monospace;letter-spacing:.14em}
+    @keyframes rainfall{to{transform:translateY(175vh)}}
+    @keyframes fog{to{transform:translateX(28%)}}
+    @keyframes appear{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes rise{from{opacity:0;transform:translateY(44px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+    @keyframes pulse{50%{box-shadow:0 0 20px #e54747}}
+    @media(max-width:560px){.hud{padding:13px 14px}.hud .brand{letter-spacing:.04em;font-size:10px}.scene{padding-left:14px;padding-right:14px}.env-outer{width:min(94vw,650px)}.env-address{letter-spacing:.05em;bottom:8%}.hero-title{font-size:clamp(35px,10vw,54px)}.hero-sub{font-size:11px}.hint{margin:8px 0 15px}.letter-heading{letter-spacing:.12em}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rain{display:none}}
+  </style>
+</head>
+<body>
+  <div class="backdrop" aria-hidden="true">
+    <div class="street-glow"></div>
+    <svg class="skyline" viewBox="0 0 1440 700" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs><linearGradient id="building" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#22242b"/><stop offset="1" stop-color="#030406"/></linearGradient><radialGradient id="halo"><stop stop-color="#cda56c" stop-opacity=".65"/><stop offset="1" stop-color="#cda56c" stop-opacity="0"/></radialGradient></defs>
+      <path d="M0 318 L50 318 L50 260 L90 260 L90 230 L125 230 L125 275 L162 275 L162 190 L204 190 L204 213 L247 213 L247 305 L282 305 L282 237 L320 237 L320 145 L370 145 L370 229 L420 229 L420 265 L470 265 L470 177 L510 177 L510 202 L560 202 L560 278 L608 278 L608 340 L672 340 L672 295 L735 295 L735 345 L795 345 L795 268 L838 268 L838 238 L882 238 L882 185 L920 185 L920 260 L945 260 L945 293 L1010 293 L1010 227 L1059 227 L1059 251 L1100 251 L1100 190 L1162 190 L1162 245 L1230 245 L1230 290 L1275 290 L1275 225 L1317 225 L1317 266 L1385 266 L1385 235 L1440 235 L1440 700 L0 700 Z" fill="url(#building)"/>
+      <path d="M635 400V202 H680 V172 L704 148 L728 172 V202 H776 V400 M671 202 V180 H742 V202 M694 148 V96 H716 V148 M703 96 V65" fill="#06080b" stroke="#34323a" stroke-width="3"/><path d="M601 408 H814" stroke="#353035" stroke-width="7"/>
+      <g fill="#9b7148" opacity=".44"><rect x="181" y="275" width="11" height="20"/><rect x="214" y="277" width="10" height="20"/><rect x="293" y="302" width="12" height="19"/><rect x="337" y="188" width="14" height="26"/><rect x="490" y="259" width="12" height="25"/><rect x="822" y="325" width="14" height="28"/><rect x="1080" y="325" width="12" height="19"/><rect x="1193" y="287" width="11" height="22"/><rect x="1340" y="317" width="12" height="22"/></g>
+      <g><circle cx="175" cy="430" r="100" fill="url(#halo)"/><path d="M175 630 V425 M166 425 Q175 408 184 425" stroke="#0c0d0e" stroke-width="8"/><circle cx="175" cy="425" r="12" fill="#d7a96d"/></g>
+      <path d="M0 565 Q550 490 1440 568 V700 H0" fill="#050608"/>
+    </svg>
+    <div class="rain" id="rain"></div><div class="fog"></div>
+  </div>
+  <div class="vignette" aria-hidden="true"></div>
+  <header class="hud">
+    <div class="brand">BERLIN · 1926 <span aria-hidden="true">✦</span> AKTE 01 / 03</div>
+    <button class="sound" id="soundButton" type="button" aria-label="Musik ein- oder ausschalten">◖)) <span id="soundLabel">TON EINSCHALTEN</span></button>
+  </header>
+  <main>
+    <section id="intro" class="scene" aria-labelledby="introTitle">
+      <div class="ornament" aria-hidden="true">✦ ⌁ ✦</div>
+      <p class="eyebrow">Theater Rote Burg · Eine anonyme Botschaft</p>
+      <h1 class="hero-title" id="introTitle">Nicht jede Einladung<br><em>ist ein Geschenk.</em></h1>
+      <div class="thin-rule" aria-hidden="true">◆</div>
+      <p class="hero-sub">Eine Nachricht wurde für die Gäste hinterlassen.<br>Der Absender ist unbekannt.</p>
+      <button id="enterButton" class="cta" type="button">DIE NACHRICHT EMPFANGEN <span aria-hidden="true">➜</span></button>
+      <p class="notice" id="autoplayInfo">Musik startet, sobald dein Browser die Wiedergabe erlaubt — spätestens beim ersten Tippen.</p>
+    </section>
+    <section id="envelopeScene" class="scene" aria-labelledby="envelopeTitle" hidden>
+      <p class="eyebrow">Vertraulich · Nur für die geladenen Gäste</p>
+      <h2 id="envelopeTitle" class="envelope-title">Ein Brief ohne Absender.</h2>
+      <p class="hint">Er lag vor der Tür des Theaters. Niemand hat gesehen, wer ihn gebracht hat.</p>
+      <button id="openButton" class="env-outer" type="button" aria-label="Das rote Wachssiegel brechen und den Brief öffnen">
+        <span class="env-back"></span><span class="env-inside"></span><span class="env-body"></span><span class="env-top"></span>
+        <span class="env-address">AN DIE GÄSTE<br>DES THEATERS ROTE BURG</span><span class="env-seal">R</span>
+      </button>
+      <p class="hint" id="envelopeHint">Berühre das rote Siegel, um den Brief zu öffnen.</p>
+    </section>
+    <section id="letterScene" class="scene letter-scene" aria-labelledby="letterTitle" hidden>
+      <p class="letter-heading">Theater Rote Burg · Die erste Warnung</p>
+      <h2 class="warning-phrase" id="letterTitle">Die Nachricht des Unbekannten</h2>
+      <div class="letter-frame"><img class="letter-image" src="carta-ameaca-1.png" alt="Anonyme Drohbotschaft aus Berlin 1926 an die Gäste des Theaters Rote Burg mit Warnung vor Geheimnissen und Lügen." loading="eager"></div>
+      <div class="letter-options"><button id="replayButton" type="button" class="text-button">↶ BRIEF ERNEUT ÖFFNEN</button><button id="homeButton" type="button" class="text-button">↤ ZURÜCK ZUM ANFANG</button></div>
+    </section>
+  </main>
+  <footer class="footer">THEATER ROTE BURG · BERLIN · 15. NOVEMBER 1926<br>„Nicht jeder Gast ist der, der er zu sein scheint.“</footer>
+  <audio id="soundtrack" src="musica-ameaca-1.mp3" preload="auto" autoplay loop playsinline></audio>
+  <script>
+  (() => {
+    'use strict';
+    const $ = id => document.getElementById(id);
+    const intro = $('intro'), envelope = $('envelopeScene'), letter = $('letterScene');
+    const track = $('soundtrack'), soundButton = $('soundButton'), soundLabel = $('soundLabel');
+    const enterButton = $('enterButton'), openButton = $('openButton');
+    const rain = $('rain');
+    track.volume = 0.56;
+    track.loop = true;
+
+    // Cinematic rain: visual only. Reduced-motion users see a still scene.
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const fragment = document.createDocumentFragment();
+      for (let i=0;i<48;i++) {
+        const drop = document.createElement('i');
+        drop.style.setProperty('--left', ((i*73+21)%103)+'%');
+        drop.style.setProperty('--len', (35+(i*19)%80)+'px');
+        drop.style.setProperty('--dur', (1.1+(i%11)*.18)+'s');
+        drop.style.setProperty('--delay', (-i*.31)+'s');
+        drop.style.setProperty('--opacity', (.15+(i%7)*.1).toFixed(2));
+        fragment.appendChild(drop);
+      }
+      rain.appendChild(fragment);
     }
-    if (ctx.state === 'suspended') ctx.resume();
-  } catch(e) { /* Os efeitos não impedem a música de tocar. */ }
-}
-function paper() {
-  if (!ctx || muted) return;
-  const sr = ctx.sampleRate;
-  const b = ctx.createBuffer(1, Math.round(sr * 0.8), sr);
-  const d = b.getChannelData(0);
-  for (let i = 0; i < d.length; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / d.length, 2);
-  const src = ctx.createBufferSource();
-  const filter = ctx.createBiquadFilter();
-  const gain = ctx.createGain();
-  src.buffer = b;
-  filter.type = 'highpass';
-  filter.frequency.value = 750;
-  gain.gain.value = 0.16;
-  src.connect(filter).connect(gain).connect(master);
-  src.start();
-}
-$('enter').addEventListener('click',()=>{audioStart();$('entry').classList.add('hidden');setTimeout(()=>$('frame').classList.add('open'),500)});
-function openInvite(){if(!guest)return;audioStart();paper();$('envelope').classList.add('unsealed');$('open').hidden=true;setTimeout(()=>{$('invite').classList.add('visible');$('invite').scrollIntoView({behavior:'smooth',block:'start'})},950)}$('open').addEventListener('click',openInvite);$('envelope').addEventListener('click',openInvite);$('envelope').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openInvite()}});
-$('close').addEventListener('click',()=>{$('invite').classList.remove('visible');$('envelope').classList.remove('unsealed');$('open').hidden=false;$('envelope').scrollIntoView({behavior:'smooth',block:'center'})});$('sound').addEventListener('click',()=>{muted=!muted;soundtrack.muted=muted;$('sound').textContent=muted?'TON EINSCHALTEN':'TON AUSSCHALTEN';if(!muted)audioStart()});
-</script></body></html>
+
+    function syncSoundLabel() {
+      const playing = !track.paused;
+      soundLabel.textContent = playing ? 'TON AUSSCHALTEN' : 'TON EINSCHALTEN';
+      soundButton.setAttribute('aria-pressed', String(playing));
+    }
+    async function startMusic() {
+      if (!track.paused) return;
+      try { await track.play(); } catch (e) { /* Browsers block unprompted sound. */ }
+      syncSoundLabel();
+    }
+    soundButton.addEventListener('click', async () => {
+      if (track.paused) await startMusic();
+      else {track.pause();syncSoundLabel();}
+    });
+    track.addEventListener('play', syncSoundLabel);
+    track.addEventListener('pause', syncSoundLabel);
+    // Try immediately; if blocked, the first touch on Enter starts the music.
+    startMusic();
+
+    function stage(next) {
+      [intro, envelope, letter].forEach(node => { node.hidden = node !== next; });
+      window.scrollTo({top:0,behavior:'instant'});
+    }
+    enterButton.addEventListener('click', () => {
+      startMusic();
+      stage(envelope);
+    });
+
+    // A short, original paper-rustle and cracking-wax effect synthesized in-browser.
+    function paperCrackle() {
+      try {
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContextClass) return;
+        const ctx = new AudioContextClass();
+        ctx.resume();
+        const duration=.9, count=Math.floor(ctx.sampleRate*duration);
+        const buffer=ctx.createBuffer(1,count,ctx.sampleRate);
+        const arr=buffer.getChannelData(0);
+        for(let i=0;i<count;i++){
+          const t=i/ctx.sampleRate;
+          const scratch=(Math.random()*2-1)*(0.13+0.19*Math.sin(2*Math.PI*16*t)**2);
+          const tap=(t>.12&&t<.2)?(Math.random()*2-1)*.35:0;
+          arr[i]=(scratch+tap)*Math.pow(1-t/duration,1.5);
+        }
+        const noise=ctx.createBufferSource();noise.buffer=buffer;
+        const filter=ctx.createBiquadFilter();filter.type='bandpass';filter.frequency.value=1250;filter.Q.value=.75;
+        const gain=ctx.createGain();gain.gain.value=.32;
+        noise.connect(filter).connect(gain).connect(ctx.destination);
+        noise.start();
+        const osc=ctx.createOscillator(), pop=ctx.createGain();
+        osc.type='triangle';osc.frequency.setValueAtTime(125,ctx.currentTime+.04);
+        osc.frequency.exponentialRampToValueAtTime(52,ctx.currentTime+.18);
+        pop.gain.setValueAtTime(.0001,ctx.currentTime);
+        pop.gain.exponentialRampToValueAtTime(.19,ctx.currentTime+.048);
+        pop.gain.exponentialRampToValueAtTime(.0001,ctx.currentTime+.22);
+        osc.connect(pop).connect(ctx.destination);
+        osc.start(ctx.currentTime+.04);osc.stop(ctx.currentTime+.23);
+        setTimeout(()=>ctx.close().catch(()=>{}),1700);
+      }catch(e){/* Some devices do not support effects. */}
+    }
+    let opening = false;
+    openButton.addEventListener('click', () => {
+      if (opening) return;
+      opening = true;
+      startMusic();paperCrackle();
+      openButton.classList.add('opened');
+      $('envelopeHint').textContent='Das Siegel ist gebrochen …';
+      setTimeout(() => stage(letter), window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 120 : 1200);
+    });
+    function resetToEnvelope(){opening=false;openButton.classList.remove('opened');$('envelopeHint').textContent='Berühre das rote Siegel, um den Brief zu öffnen.';stage(envelope);}
+    $('replayButton').addEventListener('click',resetToEnvelope);
+    $('homeButton').addEventListener('click',()=>{opening=false;openButton.classList.remove('opened');$('envelopeHint').textContent='Berühre das rote Siegel, um den Brief zu öffnen.';stage(intro);});
+    syncSoundLabel();
+  })();
+  </script>
+</body>
+</html>
