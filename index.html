@@ -6,12 +6,42 @@
 const guests={margarete:{name:'Margarete Maurus',file:'Margarete Einladung.png',greet:'Sehr geehrte Margarete'},ilse:{name:'Ilse Hauber',file:'Ilse Einladung.png',greet:'Liebe Ilse'},wilhelm:{name:'Wilhelm von Rappburg',file:'Wilhelm Einladung.png',greet:'Lieber Wilhelm'},juri:{name:'Juri Petrow',file:'Juri Einladung.png',greet:'Lieber Juri'},elli:{name:'Elli Wolf',file:'Ellie Einladung.png',greet:'Liebe Elli'}};
 const id=(new URLSearchParams(location.search).get('gast')||'').toLowerCase();const guest=guests[id];const $=s=>document.getElementById(s);
 if(guest){$('envname').textContent=guest.name;$('salutation').textContent=guest.greet;$('inviteImage').src=encodeURI(guest.file);$('inviteImage').alt='Einladung für '+guest.name;}else{$('salutation').textContent='Ihre persönliche Einladung';$('envname').textContent='Nur für geladene Gäste';$('open').disabled=true;$('open').textContent='PERSÖNLICHEN LINK VERWENDEN';$('envelope').style.cursor='default';}
-// Música original sintetizada no navegador: sem ficheiros externos nem direitos de terceiros.
-let ctx,master,timer,step=0,muted=false;function audioStart(){try{ctx=ctx||new(window.AudioContext||window.webkitAudioContext)();ctx.resume();if(!master){master=ctx.createGain();master.gain.value=.15;master.connect(ctx.destination);music();timer=setInterval(music,450);}}catch(e){}}
-function note(freq,duration=1.2,type='sine',volume=.08,delay=0){if(!ctx||muted)return;let osc=ctx.createOscillator(),g=ctx.createGain(),t=ctx.currentTime+delay;osc.type=type;osc.frequency.setValueAtTime(freq,t);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(volume,t+.06);g.gain.exponentialRampToValueAtTime(.0001,t+duration);osc.connect(g).connect(master);osc.start(t);osc.stop(t+duration+.03)}
-const melody=[293.66,349.23,440,392,349.23,293.66,261.63,293.66,329.63,392,440,349.23,329.63,293.66,261.63,220];const bass=[146.83,130.81,164.81,110];function music(){if(!ctx||muted)return;note(melody[step%melody.length],1.5,'triangle',.095);if(step%4===0){note(bass[Math.floor(step/4)%4],2.7,'sine',.16);note(bass[Math.floor(step/4)%4]*1.5,2.4,'triangle',.04)}step++}
-function paper(){if(!ctx||muted)return;const sr=ctx.sampleRate,b=ctx.createBuffer(1,Math.round(sr*.8),sr),d=b.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/d.length,2);const src=ctx.createBufferSource(),filter=ctx.createBiquadFilter(),g=ctx.createGain();src.buffer=b;filter.type='highpass';filter.frequency.value=750;g.gain.value=.16;src.connect(filter).connect(g).connect(master);src.start();note(220,.2,'sawtooth',.06)}
+// Música escolhida pelo anfitrião. O MP3 deve estar na mesma pasta do index.html.
+const soundtrack = new Audio('vellumlounge-retro-jazz-annabelle-male-vocal-577014.mp3');
+soundtrack.loop = true;
+soundtrack.preload = 'auto';
+soundtrack.volume = 0.48;
+let ctx, master, muted = false;
+function audioStart() {
+  soundtrack.muted = muted;
+  if (!muted && soundtrack.paused) soundtrack.play().catch(() => {});
+  try {
+    if (!ctx) {
+      ctx = new (window.AudioContext || window.webkitAudioContext)();
+      master = ctx.createGain();
+      master.gain.value = 0.4;
+      master.connect(ctx.destination);
+    }
+    if (ctx.state === 'suspended') ctx.resume();
+  } catch(e) { /* Os efeitos não impedem a música de tocar. */ }
+}
+function paper() {
+  if (!ctx || muted) return;
+  const sr = ctx.sampleRate;
+  const b = ctx.createBuffer(1, Math.round(sr * 0.8), sr);
+  const d = b.getChannelData(0);
+  for (let i = 0; i < d.length; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / d.length, 2);
+  const src = ctx.createBufferSource();
+  const filter = ctx.createBiquadFilter();
+  const gain = ctx.createGain();
+  src.buffer = b;
+  filter.type = 'highpass';
+  filter.frequency.value = 750;
+  gain.gain.value = 0.16;
+  src.connect(filter).connect(gain).connect(master);
+  src.start();
+}
 $('enter').addEventListener('click',()=>{audioStart();$('entry').classList.add('hidden');setTimeout(()=>$('frame').classList.add('open'),500)});
 function openInvite(){if(!guest)return;audioStart();paper();$('envelope').classList.add('unsealed');$('open').hidden=true;setTimeout(()=>{$('invite').classList.add('visible');$('invite').scrollIntoView({behavior:'smooth',block:'start'})},950)}$('open').addEventListener('click',openInvite);$('envelope').addEventListener('click',openInvite);$('envelope').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openInvite()}});
-$('close').addEventListener('click',()=>{$('invite').classList.remove('visible');$('envelope').classList.remove('unsealed');$('open').hidden=false;$('envelope').scrollIntoView({behavior:'smooth',block:'center'})});$('sound').addEventListener('click',()=>{muted=!muted;$('sound').textContent=muted?'TON EINSCHALTEN':'TON AUSSCHALTEN';if(!muted)audioStart()});
+$('close').addEventListener('click',()=>{$('invite').classList.remove('visible');$('envelope').classList.remove('unsealed');$('open').hidden=false;$('envelope').scrollIntoView({behavior:'smooth',block:'center'})});$('sound').addEventListener('click',()=>{muted=!muted;soundtrack.muted=muted;$('sound').textContent=muted?'TON EINSCHALTEN':'TON AUSSCHALTEN';if(!muted)audioStart()});
 </script></body></html>
